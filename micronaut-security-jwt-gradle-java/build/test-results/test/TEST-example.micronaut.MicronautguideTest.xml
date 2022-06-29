@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="example.micronaut.MicronautguideTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-06-15T20:11:02" hostname="thongs-mbp.lan" time="0.004">
+  <properties/>
+  <testcase name="testItWorks()" classname="example.micronaut.MicronautguideTest" time="0.004"/>
+  <system-out><![CDATA[?[36m16:11:02.199?[0;39m ?[1;30m[Test worker]?[0;39m ?[34mINFO ?[0;39m ?[35mi.m.context.env.DefaultEnvironment?[0;39m - Established active environments: [test]
+?[36m16:11:02.227?[0;39m ?[1;30m[Test worker]?[0;39m ?[34mINFO ?[0;39m ?[35mcom.zaxxer.hikari.HikariDataSource?[0;39m - HikariPool-5 - Starting...
+?[36m16:11:02.230?[0;39m ?[1;30m[Test worker]?[0;39m ?[34mINFO ?[0;39m ?[35mcom.zaxxer.hikari.HikariDataSource?[0;39m - HikariPool-5 - Start completed.
+?[36m16:11:02.274?[0;39m ?[1;30m[Test worker]?[0;39m ?[34mINFO ?[0;39m ?[35mcom.zaxxer.hikari.HikariDataSource?[0;39m - HikariPool-5 - Shutdown initiated...
+?[36m16:11:02.275?[0;39m ?[1;30m[Test worker]?[0;39m ?[34mINFO ?[0;39m ?[35mcom.zaxxer.hikari.HikariDataSource?[0;39m - HikariPool-5 - Shutdown completed.
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

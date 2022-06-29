@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="example.micronaut.JwtAuthenticationTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2022-06-15T20:11:01" hostname="thongs-mbp.lan" time="0.108">
+  <properties/>
+  <testcase name="uponSuccessfulAuthenticationAJsonWebTokenIsIssuedToTheUser()" classname="example.micronaut.JwtAuthenticationTest" time="0.077"/>
+  <testcase name="accessingASecuredUrlWithoutAuthenticatingReturnsUnauthorized()" classname="example.micronaut.JwtAuthenticationTest" time="0.03"/>
+  <system-out><![CDATA[?[36m16:11:01.829?[0;39m ?[1;30m[Test worker]?[0;39m ?[34mINFO ?[0;39m ?[35mi.m.context.env.DefaultEnvironment?[0;39m - Established active environments: [test]
+?[36m16:11:01.858?[0;39m ?[1;30m[Test worker]?[0;39m ?[34mINFO ?[0;39m ?[35mcom.zaxxer.hikari.HikariDataSource?[0;39m - HikariPool-3 - Starting...
+?[36m16:11:01.861?[0;39m ?[1;30m[Test worker]?[0;39m ?[34mINFO ?[0;39m ?[35mcom.zaxxer.hikari.HikariDataSource?[0;39m - HikariPool-3 - Start completed.
+?[36m16:11:02.013?[0;39m ?[1;30m[Test worker]?[0;39m ?[34mINFO ?[0;39m ?[35mcom.zaxxer.hikari.HikariDataSource?[0;39m - HikariPool-3 - Shutdown initiated...
+?[36m16:11:02.015?[0;39m ?[1;30m[Test worker]?[0;39m ?[34mINFO ?[0;39m ?[35mcom.zaxxer.hikari.HikariDataSource?[0;39m - HikariPool-3 - Shutdown completed.
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

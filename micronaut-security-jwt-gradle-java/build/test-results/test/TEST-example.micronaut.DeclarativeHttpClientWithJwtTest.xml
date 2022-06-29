@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="example.micronaut.DeclarativeHttpClientWithJwtTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-06-15T20:11:00" hostname="thongs-mbp.lan" time="0.839">
+  <properties/>
+  <testcase name="verifyJwtAuthenticationWorksWithDeclarativeClient()" classname="example.micronaut.DeclarativeHttpClientWithJwtTest" time="0.839"/>
+  <system-out><![CDATA[?[36m16:11:00.863?[0;39m ?[1;30m[Test worker]?[0;39m ?[34mINFO ?[0;39m ?[35mi.m.context.env.DefaultEnvironment?[0;39m - Established active environments: [test]
+?[36m16:11:00.893?[0;39m ?[1;30m[Test worker]?[0;39m ?[34mINFO ?[0;39m ?[35mcom.zaxxer.hikari.HikariDataSource?[0;39m - HikariPool-2 - Starting...
+?[36m16:11:00.896?[0;39m ?[1;30m[Test worker]?[0;39m ?[34mINFO ?[0;39m ?[35mcom.zaxxer.hikari.HikariDataSource?[0;39m - HikariPool-2 - Start completed.
+?[36m16:11:01.799?[0;39m ?[1;30m[Test worker]?[0;39m ?[34mINFO ?[0;39m ?[35mcom.zaxxer.hikari.HikariDataSource?[0;39m - HikariPool-2 - Shutdown initiated...
+?[36m16:11:01.801?[0;39m ?[1;30m[Test worker]?[0;39m ?[34mINFO ?[0;39m ?[35mcom.zaxxer.hikari.HikariDataSource?[0;39m - HikariPool-2 - Shutdown completed.
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,60 @@
+plugins {
+  id("com.github.johnrengelman.shadow") version "7.1.2"
+  id("io.micronaut.application") version "3.4.1"
+}
+
+version = "0.1"
+group = "com.naturecode"
+
+repositories {
+  mavenCentral()
+}
+
+dependencies {
+  annotationProcessor("org.projectlombok:lombok")
+  annotationProcessor("io.micronaut:micronaut-http-validation")
+  annotationProcessor("io.micronaut.openapi:micronaut-openapi")
+  implementation("io.micronaut:micronaut-http-client")
+  implementation("io.micronaut:micronaut-jackson-databind")
+  implementation("io.micronaut.reactor:micronaut-reactor")
+  implementation("io.micronaut.reactor:micronaut-reactor-http-client")
+  implementation("io.micronaut.rxjava2:micronaut-rxjava2")
+  implementation("io.micronaut.rxjava2:micronaut-rxjava2-http-client")
+  implementation("io.swagger.core.v3:swagger-annotations")
+  implementation("jakarta.annotation:jakarta.annotation-api")
+  compileOnly("org.projectlombok:lombok")
+  runtimeOnly("ch.qos.logback:logback-classic")
+  runtimeOnly("io.micronaut.rxjava2:micronaut-rxjava2-http-server-netty")
+  implementation("io.micronaut:micronaut-validation")
+
+  testImplementation("org.mockito:mockito-core")
+  testImplementation("org.awaitility:awaitility:4.0.3")
+
+// using graalVM
+  annotationProcessor("io.micronaut:micronaut-graal")
+  compileOnly("org.graalvm.nativeimage:svm")
+}
+
+
+application {
+  mainClass.set("com.naturecode.Application")
+}
+java {
+  sourceCompatibility = JavaVersion.toVersion("17")
+  targetCompatibility = JavaVersion.toVersion("17")
+}
+
+graalvmNative.toolchainDetection = false
+micronaut {
+  runtime("netty")
+  testRuntime("junit5")
+  processing {
+    incremental(true)
+    annotations("com.naturecode.*")
+  }
+}
+
+tasks.withType(JavaCompile) {
+  options.fork = true
+  options.forkOptions.jvmArgs << '-Dmicronaut.openapi.views.spec=rapidoc.enabled=true,redoc.enabled=true,swagger-ui.enabled=true,swagger-ui.theme=flattop'
+}

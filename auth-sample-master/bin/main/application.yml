@@ -1,0 +1,14 @@
+# App general
+---
+micronaut:
+  application:
+    name: micronaut-authentication-series
+---
+
+# Security Config
+micronaut:
+  security:
+    enabled: true
+    endpoints:
+      login:
+        enabled: true

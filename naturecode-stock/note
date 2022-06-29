@@ -1,0 +1,3 @@
+docker run --name my-postgres -e POSTGRES_PASSWORD=secret -e POSTGRES_DB=naturecode-stock -p 5432:5432 -d postgres:12.4
+
+docker run --name my-mysql -e MYSQL_ROOT_PASSWORD=secret -e MYSQL_PASSWORD=secret -e MYSQL_DATABASE=naturecode-funding -p 3306:3306 -d mysql:8.0

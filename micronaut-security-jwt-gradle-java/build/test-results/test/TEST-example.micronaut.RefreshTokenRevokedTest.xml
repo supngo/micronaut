@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="example.micronaut.RefreshTokenRevokedTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-06-15T20:11:06" hostname="thongs-mbp.lan" time="0.026">
+  <properties/>
+  <testcase name="accessingSecuredURLWithoutAuthenticatingReturnsUnauthorized()" classname="example.micronaut.RefreshTokenRevokedTest" time="0.026"/>
+  <system-out><![CDATA[?[36m16:11:06.623?[0;39m ?[1;30m[Test worker]?[0;39m ?[34mINFO ?[0;39m ?[35mi.m.context.env.DefaultEnvironment?[0;39m - Established active environments: [test]
+?[36m16:11:06.647?[0;39m ?[1;30m[Test worker]?[0;39m ?[34mINFO ?[0;39m ?[35mcom.zaxxer.hikari.HikariDataSource?[0;39m - HikariPool-8 - Starting...
+?[36m16:11:06.650?[0;39m ?[1;30m[Test worker]?[0;39m ?[34mINFO ?[0;39m ?[35mcom.zaxxer.hikari.HikariDataSource?[0;39m - HikariPool-8 - Start completed.
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

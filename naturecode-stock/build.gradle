@@ -1,0 +1,84 @@
+plugins {
+  id("com.github.johnrengelman.shadow") version "7.1.2"
+  id("io.micronaut.application") version "3.4.1"
+}
+
+version = "0.1"
+group = "com.naturecode"
+
+repositories {
+  mavenCentral()
+}
+
+dependencies {
+  annotationProcessor("org.projectlombok:lombok")
+  annotationProcessor("io.micronaut:micronaut-http-validation")
+  annotationProcessor("io.micronaut.openapi:micronaut-openapi")
+  implementation("io.micronaut:micronaut-http-client")
+  implementation("io.micronaut:micronaut-jackson-databind")
+  implementation("io.micronaut.reactor:micronaut-reactor")
+  implementation("io.micronaut.reactor:micronaut-reactor-http-client")
+  implementation("io.micronaut:micronaut-management")
+  implementation("io.micronaut.rxjava2:micronaut-rxjava2")
+  implementation("io.micronaut.rxjava2:micronaut-rxjava2-http-client")
+  implementation("io.micronaut.security:micronaut-security-jwt")
+  implementation("io.micronaut.security:micronaut-security-annotations")
+  implementation("io.swagger.core.v3:swagger-annotations")
+  implementation("jakarta.annotation:jakarta.annotation-api")
+  compileOnly("org.projectlombok:lombok")
+  runtimeOnly("ch.qos.logback:logback-classic")
+  implementation("io.micronaut:micronaut-validation")
+  implementation ('com.github.javafaker:javafaker:1.0.2')
+
+// Unit Test
+  testAnnotationProcessor "io.micronaut:micronaut-inject-java"
+  testImplementation "org.junit.jupiter:junit-jupiter-api"
+  testImplementation "io.micronaut.test:micronaut-test-junit5"
+  testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine"
+
+// Database
+  implementation("io.micronaut.flyway:micronaut-flyway")
+  compileOnly("io.micronaut.liquibase:micronaut-liquibase")
+  runtimeOnly("org.postgresql:postgresql")
+  implementation("io.micronaut.data:micronaut-data-hibernate-jpa")
+  runtimeOnly("io.micronaut.sql:micronaut-jdbc-hikari")
+  runtimeOnly("io.micronaut.data:micronaut-data-jdbc")
+}
+
+test {
+  useJUnitPlatform()
+}
+
+application {
+  mainClass.set("com.naturecode.Application")
+}
+java {
+  sourceCompatibility = JavaVersion.toVersion("17")
+  targetCompatibility = JavaVersion.toVersion("17")
+}
+
+graalvmNative.toolchainDetection = false
+micronaut {
+  runtime("netty")
+  testRuntime("junit5")
+  processing {
+    incremental(true)
+    annotations("com.naturecode.*")
+  }
+}
+
+tasks.withType(JavaCompile) {
+  options.fork = true
+  options.forkOptions.jvmArgs << '-Dmicronaut.openapi.views.spec=rapidoc.enabled=true,redoc.enabled=true,swagger-ui.enabled=true,swagger-ui.theme=flattop'
+}
+
+configurations.all {
+  resolutionStrategy.eachDependency { details ->
+    if (details.requested.module.toString() == 'org.yaml:snakeyaml') {
+      details.artifactSelection {
+        it.selectArtifact(DependencyArtifact.DEFAULT_TYPE, null, null)
+      }
+    }
+  }
+}
+
